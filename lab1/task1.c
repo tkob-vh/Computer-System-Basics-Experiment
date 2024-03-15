@@ -13,6 +13,7 @@ typedef struct STUDENT{
     char remark[200];
 } student;
 
+void inputStudentInfo(student *s, int N);
 int pack_student_bytebybyte(student *s, int sno, char *buf);
 int pack_student_whole(student *s, int sno, char *buf);
 int restore_student(char *buf, int len, student *s);
@@ -23,32 +24,8 @@ int main(){
     int message_length;
     int old_length, new_length;
 
-
-    // Student 0
-    strcpy(old_s[0].name, "yyx");    
-    old_s[0].score = 45;
-    old_s[0].age = 100;
-    strcpy(old_s[0].remark, "Hello Wolrd!");
-    //Student 1
-    strcpy(old_s[1].name, "asdg");
-    old_s[1].score = 23;
-    old_s[1].age = 32;
-    strcpy(old_s[1].remark, "fjadfjsd");
-    //Student 2
-    strcpy(old_s[2].name, "gmnroei");
-    old_s[2].score = 24;
-    old_s[2].age = 65;
-    strcpy(old_s[2].remark, "fjoiadsjgaiosgn");
-    //Student 3
-    strcpy(old_s[3].name, "jdsiof");
-    old_s[3].score = 43;
-    old_s[3].age = 53;
-    strcpy(old_s[3].remark, "jdfoaijdfgaiojg");
-    //Student 4
-    strcpy(old_s[4].name, "jao");
-    old_s[4].score = 76;
-    old_s[4].age = 43;
-    strcpy(old_s[4].remark, "gjknarignearogfnae");
+    
+    inputStudentInfo(old_s, N);
 
     printf("The information of the old_s: \n");
     for(int i = 0; i < N; i++){
@@ -74,13 +51,42 @@ int main(){
     printf("The length of the old_s: %d\n", old_length);
     printf("The length after packed: %d\n", message_length);
     
-    printf("The first 20 bytes of message:\n");
+    printf("The first 20 bytes of message in hex:\n0x");
     for(int i = 0; i < 20; i++){
-        printf("%c",message[i]);
+        printf("%02X", message[i]);
     }
     printf("\n");
 
     return 0;
+}
+
+void inputStudentInfo(student *s, int N){
+
+    // Student 0
+    strcpy(s[0].name, "yyx");    
+    s[0].score = 45.0;
+    s[0].age = 100;
+    strcpy(s[0].remark, "Hello Wolrd!");
+    //Student 1
+    strcpy(s[1].name, "asdg");
+    s[1].score = 23.0;
+    s[1].age = 32;
+    strcpy(s[1].remark, "fjadfjsd");
+    //Student 2
+    strcpy(s[2].name, "gmnroei");
+    s[2].score = 24.0;
+    s[2].age = 65;
+    strcpy(s[2].remark, "fjoiadsjgaiosgn");
+    //Student 3
+    strcpy(s[3].name, "jdsiof");
+    s[3].score = 43.0;
+    s[3].age = 53;
+    strcpy(s[3].remark, "jdfoaijdfgaiojg");
+    //Student 4
+    strcpy(s[4].name, "jao");
+    s[4].score = 76.0;
+    s[4].age = 43;
+    strcpy(s[4].remark, "gjknarignearogfnae");
 }
 
 /* 
