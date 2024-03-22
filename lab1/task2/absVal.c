@@ -1,6 +1,3 @@
-int absVal(int x);
-int absVal_standard(int x);
-
 int absVal(int x){
     int mask = x >> 31; //the sign bit of x
     return (x ^ mask) + ~mask + 1;

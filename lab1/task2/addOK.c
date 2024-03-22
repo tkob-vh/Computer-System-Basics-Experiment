@@ -1,6 +1,3 @@
-int addOK(int x, int y);
-int addOK_standard(int x, int y);
-
 int addOK(int x, int y){
     int sum = x + y;
 

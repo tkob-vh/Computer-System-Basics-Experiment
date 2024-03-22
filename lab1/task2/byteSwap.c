@@ -1,7 +1,3 @@
-int byteSwap(int target, int m, int n);
-int byteSwap_standard(int target, int m, int n);
-
-
 int byteSwap(int target, int m, int n){
     int m3 = m << 3;
     int n3 = n << 3;

@@ -1,6 +1,3 @@
-int bitMask(int lowbit, int highbit);
-int bitMask_standard(int lowbit, int highbit);
-
 int bitMask(int lowbit, int highbit){
     int all1 = ~0;
     int mask = all1 + (2 << highbit);
