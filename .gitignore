@@ -52,4 +52,5 @@ Mkfile.old
 dkms.conf
 
 bufbomb
-linkbomb
+linkbomb*
+!phase*.o

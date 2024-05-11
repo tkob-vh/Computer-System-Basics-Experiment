@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void (*phase)(int  i);   // 定义了一个函数指针
+extern void (*phase)(int  i);   // 定义了一个函数指针
 
 int gencookie(char *s)
 {
